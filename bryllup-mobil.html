@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bryllup Kristine & Halvdan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F6E9E1;
+      --accent: #A66C6C;
+      --text: #3D405B;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.6;
+      padding: 0;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      margin-bottom: 0.5em;
+    }
+    h1 { font-size: 2.5rem; text-align: center; }
+    h2 { font-size: 1.8rem; margin-top: 2rem; }
+    h3 { font-size: 1.2rem; }
+    
+    .hero {
+      background: linear-gradient(135deg, var(--accent), #8c4e4e);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero h1 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .countdown {
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .program {
+      margin: 2rem 0;
+    }
+    .timeline-day {
+      background: white;
+      margin: 1rem 0;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .timeline-day h3 {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    .timeline-day ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .timeline-day li {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: baseline;
+    }
+    .time {
+      font-weight: 600;
+      color: var(--accent);
+      min-width: 4rem;
+    }
+    
+    .info {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .info ul {
+      list-style: none;
+    }
+    .info li {
+      margin: 0.8rem 0;
+    }
+    .info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    .rsvp {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .rsvp form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .rsvp label {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .rsvp input, .rsvp select {
+      padding: 0.8rem;
+      border: 2px solid var(--accent);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      background: #f9f6f3;
+    }
+    .rsvp button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .footer {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Kristine ♥ Halvdan</h1>
+    <div id="countdown" class="countdown">Laster nedtelling...</div>
+  </div>
+
+  <div class="container">
+    <div class="program">
+      <h2>Program</h2>
+      <div class="timeline-day">
+        <h3>Fredag 12. [MÅNED]</h3>
+        <ul>
+          <li><span class="time">19:00</span> Middag for ankomne gjester</li>
+        </ul>
+      </div>
+      <div class="timeline-day">
+        <h3>Lørdag 13. [MÅNED]</h3>
+        <ul>
+          <li><span class="time">11:00</span> Rolig formiddag på vingården</li>
+          <li><span class="time">14:00</span> Vielse i vinmarken</li>
+          <li><span class="time">16:00</span> Aperitiff & fotografering</li>
+          <li><span class="time">18:00</span> Middag + taler</li>
+          <li><span class="time">21:00</span> Fest & dans</li>
+        </ul>
+      </div>
+      <div class="timeline-day">
+        <h3>Søndag 14. [MÅNED]</h3>
+        <ul>
+          <li><span class="time">10:00</span> Avsluttende frokost</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info">
+      <h2>Praktisk info</h2>
+      <ul>
+        <li><strong>Sted:</strong> <a href="https://maps.google.com/?q=Lesalles+vingård">Lesalles vingård</a></li>
+        <li><strong>Kleskode:</strong> Lett sommerpent – sommer- eller lindress.</li>
+        <li><strong>Overnatting:</strong> 22 rom på vingården (prioriteres barnefamilier). Ekstra rom på Hotel La Rabiega; transport ordnes begge veier.</li>
+      </ul>
+    </div>
+
+    <div class="rsvp">
+      <h2>RSVP</h2>
+      <form action="https://formspree.io/f/xyz123" method="POST">
+        <label for="navn">Navn</label>
+        <input type="text" id="navn" name="navn" required>
+        
+        <label for="epost">E-post</label>
+        <input type="email" id="epost" name="epost" required>
+        
+        <label for="antall">Antall personer</label>
+        <input type="number" id="antall" name="antall" min="1" max="10" required>
+        
+        <label for="allergier">Allergier</label>
+        <input type="text" id="allergier" name="allergier" placeholder="Skriv evt. allergier">
+        
+        <label for="rom-lesalles">Ønsker du rom på Lesalles?</label>
+        <select id="rom-lesalles" name="rom-lesalles">
+          <option value="">Velg</option>
+          <option value="ja">Ja</option>
+          <option value="nei">Nei</option>
+        </select>
+        
+        <label for="rom-rabiega">Ønsker du rom på La Rabiega?</label>
+        <select id="rom-rabiega" name="rom-rabiega">
+          <option value="">Velg</option>
+          <option value="ja">Ja</option>
+          <option value="nei">Nei</option>
+        </select>
+        
+        <button type="submit">Send svar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>E-post <a href="mailto:halvdan.bigset@gmail.com">halvdan.bigset@gmail.com</a> · Tlf <a href="tel:91680373">916 80 373</a></p>
+  </div>
+
+  <script>
+    // Nedtelling til bryllupet
+    const weddingDate = new Date('2024-08-12T19:00:00+02:00');
+    const countdownEl = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+      if (diff <= 0) {
+        countdownEl.textContent = 'Det er bryllupsdag!';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      countdownEl.textContent = `${days} dager ${hours}t ${mins}m igjen`;
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 60000); // Oppdater hvert minutt
+  </script>
+</body>
+</html>
