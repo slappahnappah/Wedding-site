@@ -1,0 +1,105 @@
+<!--
+README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero. For å legge inn ekte bilder, bytt ut filene i /assets og oppdater <img>-src. For å bytte farger, endre CSS-variabler i style.css.
+-->
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bryllup Kristine & Halvdan</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Hero seksjon med nedtelling -->
+  <section class="hero" id="hero">
+    <img src="assets/hero-placeholder.jpg" alt="Bryllupsbilde" class="hero-img" loading="lazy">
+    <div class="hero-content">
+      <h1>Kristine <span aria-label="hjerte">♥</span> Halvdan</h1>
+      <div id="countdown" class="countdown"></div>
+    </div>
+  </section>
+
+  <!-- Program seksjon -->
+  <section class="program" id="program">
+    <h2>Program</h2>
+    <div class="timeline">
+      <div class="timeline-day">
+        <h3>Fredag 12. [MÅNED]</h3>
+        <ul>
+          <li><span class="time">19:00</span> Middag for ankomne gjester</li>
+        </ul>
+      </div>
+      <div class="timeline-day">
+        <h3>Lørdag 13. [MÅNED]</h3>
+        <ul>
+          <li><span class="time">11:00</span> Rolig formiddag på vingården</li>
+          <li><span class="time">14:00</span> Vielse i vinmarken</li>
+          <li><span class="time">16:00</span> Aperitiff &amp; fotografering</li>
+          <li><span class="time">18:00</span> Middag + taler</li>
+          <li><span class="time">21:00</span> Fest &amp; dans</li>
+        </ul>
+      </div>
+      <div class="timeline-day">
+        <h3>Søndag 14. [MÅNED]</h3>
+        <ul>
+          <li><span class="time">10:00</span> Avsluttende frokost</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Praktisk info seksjon -->
+  <section class="info" id="info">
+    <h2>Praktisk info</h2>
+    <ul class="info-list">
+      <li><strong>Sted:</strong> <a href="https://maps.google.com/?q=Lesalles+vingård" target="_blank" rel="noopener">Lesalles vingård</a></li>
+      <li><strong>Kleskode:</strong> Lett sommerpent – sommer- eller lindress.</li>
+      <li><strong>Overnatting:</strong> 22 rom på vingården (prioriteres barnefamilier). Ekstra rom på Hotel La Rabiega; transport ordnes begge veier.</li>
+    </ul>
+  </section>
+
+  <!-- RSVP-skjema seksjon -->
+  <section class="rsvp" id="rsvp">
+    <h2>RSVP</h2>
+    <form action="https://formspree.io/f/xyz123" method="POST" autocomplete="on">
+      <label for="navn">Navn</label>
+      <input type="text" id="navn" name="navn" required>
+      <label for="epost">E-post</label>
+      <input type="email" id="epost" name="epost" required>
+      <label for="antall">Antall personer</label>
+      <input type="number" id="antall" name="antall" min="1" max="10" required>
+      <label for="allergier">Allergier</label>
+      <input type="text" id="allergier" name="allergier" placeholder="Skriv evt. allergier">
+      <label for="rom-lesalles">Ønsker du rom på Lesalles?</label>
+      <select id="rom-lesalles" name="rom-lesalles">
+        <option value="">Velg</option>
+        <option value="ja">Ja</option>
+        <option value="nei">Nei</option>
+      </select>
+      <label for="rom-rabiega">Ønsker du rom på La Rabiega?</label>
+      <select id="rom-rabiega" name="rom-rabiega">
+        <option value="">Velg</option>
+        <option value="ja">Ja</option>
+        <option value="nei">Nei</option>
+      </select>
+      <button type="submit">Send svar</button>
+    </form>
+  </section>
+
+  <!-- Galleri seksjon -->
+  <section class="galleri" id="galleri">
+    <h2>Galleri</h2>
+    <div class="gallery-grid">
+      <!-- Bilder legges til her senere -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>E-post <a href="mailto:halvdan.bigset@gmail.com">halvdan.bigset@gmail.com</a> · Tlf <a href="tel:91680373">916 80 373</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
