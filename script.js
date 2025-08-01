@@ -39,7 +39,7 @@
 
   // --- Nedtelling til bryllupet ---
   // Sett dato og tid for bryllupet her:
-  const weddingDate = new Date('2024-08-12T19:00:00+02:00'); // Endre til ønsket dato/tid
+  const weddingDate = new Date('2026-06-12T19:00:00+02:00'); // Endre til ønsket dato/tid
   const countdownEl = document.getElementById('countdown');
 
   function updateCountdown() {
