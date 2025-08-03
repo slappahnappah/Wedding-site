@@ -239,6 +239,34 @@ body {
   background: var(--bg);
 }
 
+/* Bryllupstekst seksjon */
+.wedding-intro {
+  padding: 4rem 0;
+  background: white;
+}
+
+.intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.intro-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
 /* Program seksjon */
 .program {
   padding: 5rem 0;
@@ -252,76 +280,51 @@ body {
   color: var(--accent);
 }
 
-.timeline {
-  display: grid;
-  gap: 2rem;
-  max-width: 1000px;
+.program-simple {
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.timeline-day {
+.program-day {
+  margin-bottom: 3rem;
   background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  transition: transform 0.3s ease;
 }
 
-.timeline-day:hover {
-  transform: translateY(-5px);
-}
-
-.timeline-day.main-day {
+.program-day.main-day {
   border: 3px solid var(--accent);
-  transform: scale(1.02);
 }
 
-.day-header {
+.program-day h3 {
   background: var(--accent);
   color: white;
   padding: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.day-header h3 {
+  margin: 0;
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
-  color: white;
-  margin: 0;
+  font-weight: 500;
 }
 
-.day-number {
-  background: rgba(255,255,255,0.2);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.day-content {
-  padding: 2rem;
-}
-
-.event {
+.event-simple {
   display: flex;
   gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
   transition: background 0.3s ease;
 }
 
-.event:hover {
+.event-simple:last-child {
+  border-bottom: none;
+}
+
+.event-simple:hover {
   background: rgba(166, 108, 108, 0.05);
 }
 
-.event.highlight {
+.event-simple.highlight {
   background: rgba(166, 108, 108, 0.1);
   border-left: 4px solid var(--accent);
 }
@@ -392,6 +395,39 @@ body {
 
 .info-card p {
   margin-bottom: 0.5rem;
+}
+
+.venue-placeholder {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--accent);
+  position: relative;
+}
+
+.venue-placeholder:hover {
+  transform: scale(1.02);
+}
+
+.chateau-placeholder {
+  background: linear-gradient(135deg, #f8f4f0 0%, #e8d5c4 100%);
+}
+
+.rabiega-placeholder {
+  background: linear-gradient(135deg, #f0f8f0 0%, #c4e8c4 100%);
+}
+
+.venue-placeholder .placeholder-text {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .btn-secondary {
@@ -517,6 +553,42 @@ body {
   gap: 1.5rem;
 }
 
+.gallery-item {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item .venue-placeholder {
+  margin: 0;
+  height: 200px;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
 .gallery-placeholder {
   background: var(--bg);
   height: 200px;
@@ -617,15 +689,16 @@ body {
   .program h2,
   .info h2,
   .rsvp h2,
-  .galleri h2 {
+  .galleri h2,
+  .intro-content h2 {
     font-size: 2rem;
   }
   
-  .timeline-day {
-    margin: 0 1rem;
+  .program-day {
+    margin: 0 1rem 2rem 1rem;
   }
   
-  .event {
+  .event-simple {
     flex-direction: column;
     gap: 0.5rem;
   }

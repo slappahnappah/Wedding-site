@@ -50,83 +50,68 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
 
   <!-- Hovedinnhold -->
   <main class="main-content">
+    <!-- Bryllupstekst seksjon -->
+    <section class="wedding-intro">
+      <div class="container">
+        <div class="intro-content">
+          <h2>Velkommen til vårt bryllup</h2>
+          <p>Vi gleder oss til å dele denne spesielle dagen med dere i det vakre Château des Salles i Provence. Det blir en helg fylt med kjærlighet, god mat, vin og fest i det franske solskinnet.</p>
+          <p>Vi håper dere vil komme og feire med oss!</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Program seksjon -->
     <section class="program" id="program">
       <div class="container">
         <h2>Program</h2>
-        <div class="timeline">
-          <div class="timeline-day">
-            <div class="day-header">
-              <h3>Fredag 12. juni</h3>
-              <div class="day-number">12</div>
-            </div>
-            <div class="day-content">
-              <div class="event">
-                <span class="time">19:00</span>
-                <div class="event-details">
-                  <h4>Middag for ankomne gjester</h4>
-                  <p>Velkommen til Lesalles vingård</p>
-                </div>
+                <div class="program-simple">
+          <div class="program-day">
+            <h3>Fredag 12. juni</h3>
+            <div class="event-simple">
+              <span class="time">19:00</span>
+              <div class="event-details">
+                <h4>Middag for ankomne gjester</h4>
+                <p>Velkommen til Château des Salles</p>
               </div>
             </div>
           </div>
           
-          <div class="timeline-day main-day">
-            <div class="day-header">
-              <h3>Lørdag 13. juni</h3>
-              <div class="day-number">13</div>
-            </div>
-            <div class="day-content">
-              <div class="event">
-                <span class="time">11:00</span>
-                <div class="event-details">
-                  <h4>Rolig formiddag på vingården</h4>
-                  <p>Frokost og avslapping</p>
-                </div>
-              </div>
-              <div class="event highlight">
-                <span class="time">14:00</span>
-                <div class="event-details">
-                  <h4>Vielse i vinmarken</h4>
-                  <p>Hovedhendelsen</p>
-                </div>
-              </div>
-              <div class="event">
-                <span class="time">16:00</span>
-                <div class="event-details">
-                  <h4>Aperitiff & fotografering</h4>
-                  <p>Champagne og bilder</p>
-                </div>
-              </div>
-              <div class="event">
-                <span class="time">18:00</span>
-                <div class="event-details">
-                  <h4>Middag + taler</h4>
-                  <p>Festmåltid og taler</p>
-                </div>
-              </div>
-              <div class="event">
-                <span class="time">21:00</span>
-                <div class="event-details">
-                  <h4>Fest & dans</h4>
-                  <p>Dans til langt på natt</p>
-                </div>
+          <div class="program-day main-day">
+            <h3>Lørdag 13. juni</h3>
+            <div class="event-simple">
+              <span class="time">11:00</span>
+              <div class="event-details">
+                <h4>Rolig formiddag på vingården</h4>
+                <p>Frokost og avslapping</p>
               </div>
             </div>
-          </div>
-          
-          <div class="timeline-day">
-            <div class="day-header">
-              <h3>Søndag 14. juni</h3>
-              <div class="day-number">14</div>
+            <div class="event-simple highlight">
+              <span class="time">14:00</span>
+              <div class="event-details">
+                <h4>Vielse i vinmarken</h4>
+                <p>Hovedhendelsen</p>
+              </div>
             </div>
-            <div class="day-content">
-              <div class="event">
-                <span class="time">10:00</span>
-                <div class="event-details">
-                  <h4>Avsluttende frokost</h4>
-                  <p>Farewell brunch</p>
-                </div>
+            <div class="event-simple">
+              <span class="time">16:00</span>
+              <div class="event-details">
+                <h4>Aperitiff & fotografering</h4>
+                <p>Champagne og bilder</p>
+              </div>
+            </div>
+            <div class="event-simple">
+              <span class="time">18:00</span>
+              <div class="event-details">
+                <h4>Middag + taler</h4>
+                <p>Festmåltid og taler</p>
+              </div>
+            </div>
+            <div class="event-simple">
+              <span class="time">21:00</span>
+              <div class="event-details">
+                <h4>Fest & dans</h4>
+                <p>Dans til langt på natt</p>
               </div>
             </div>
           </div>
@@ -142,8 +127,12 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
           <div class="info-card">
             <div class="info-icon">📍</div>
             <h3>Sted</h3>
-            <p><strong>Lesalles vingård</strong></p>
-            <a href="https://maps.google.com/?q=Lesalles+vingård" target="_blank" rel="noopener" class="btn-secondary">Se på kart</a>
+            <p><strong>Château des Salles</strong></p>
+            <div class="venue-placeholder chateau-placeholder">
+              <div class="placeholder-text">Château des Salles</div>
+            </div>
+            <a href="https://maps.google.com/?q=Château+des+Salles,+France" target="_blank" rel="noopener" class="btn-secondary">Se på kart</a>
+            <p><a href="https://www.chateaudessalles.fr" target="_blank" rel="noopener" class="btn-secondary" style="margin-top: 0.5rem;">Besøk nettside</a></p>
           </div>
           
           <div class="info-card">
@@ -156,10 +145,22 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
           <div class="info-card">
             <div class="info-icon">🛏️</div>
             <h3>Overnatting</h3>
-            <p><strong>22 rom på vingården</strong></p>
+            <p><strong>22 rom på Château des Salles</strong></p>
             <p>Prioriteres barnefamilier</p>
-            <p>Ekstra rom på Hotel La Rabiega</p>
+            <p>Ekstra rom på <a href="https://rabiega.com" target="_blank" rel="noopener">Domaine Rabiega</a></p>
             <p>Transport ordnes begge veier</p>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">🏨</div>
+            <h3>Domaine Rabiega</h3>
+            <p><strong>Boutique hotell med 26 rom</strong></p>
+            <p>Organisk vingård og restaurant</p>
+            <div class="venue-placeholder rabiega-placeholder">
+              <div class="placeholder-text">Domaine Rabiega</div>
+            </div>
+            <p><a href="https://rabiega.com" target="_blank" rel="noopener" class="btn-secondary">Besøk nettside</a></p>
+            <p><a href="https://maps.google.com/?q=Domaine+Rabiega,+735+Chemin+Saint+Joseph,+83300+Draguignan,+France" target="_blank" rel="noopener" class="btn-secondary" style="margin-top: 0.5rem;">Se på kart</a></p>
           </div>
         </div>
       </div>
@@ -198,7 +199,7 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
           </div>
           
           <div class="form-group">
-            <label for="rom-lesalles">Ønsker du rom på Lesalles vingård?</label>
+            <label for="rom-lesalles">Ønsker du rom på Château des Salles?</label>
             <select id="rom-lesalles" name="rom-lesalles">
               <option value="">Velg</option>
               <option value="ja">Ja, takk</option>
@@ -207,7 +208,7 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
           </div>
           
           <div class="form-group">
-            <label for="rom-rabiega">Ønsker du rom på Hotel La Rabiega?</label>
+            <label for="rom-rabiega">Ønsker du rom på Domaine Rabiega?</label>
             <select id="rom-rabiega" name="rom-rabiega">
               <option value="">Velg</option>
               <option value="ja">Ja, takk</option>
@@ -225,9 +226,22 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
       <div class="container">
         <h2>Galleri</h2>
         <p class="gallery-intro">Bilder fra bryllupet vil vises her etter arrangementet</p>
+        <p style="text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 2rem;">(Placeholder-bilder - ekte bilder av stedene kommer snart)</p>
         <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="venue-placeholder chateau-placeholder">
+              <div class="placeholder-text">Château des Salles</div>
+            </div>
+            <div class="gallery-caption">Château des Salles</div>
+          </div>
+          <div class="gallery-item">
+            <div class="venue-placeholder rabiega-placeholder">
+              <div class="placeholder-text">Domaine Rabiega</div>
+            </div>
+            <div class="gallery-caption">Domaine Rabiega</div>
+          </div>
           <div class="gallery-placeholder">
-            <div class="placeholder-text">Bilder kommer snart</div>
+            <div class="placeholder-text">Bryllupsbilder kommer snart</div>
           </div>
         </div>
       </div>
