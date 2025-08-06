@@ -6,7 +6,24 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bryllup Kristine & Halfdan</title>
+  <meta name="description" content="Kristine & Halfdan gifter seg 12. juni 2026 på Château des Salles i Provence. Bli med oss på denne spesielle dagen fylt med kjærlighet, god mat og fest i det franske solskinnet.">
+  <meta name="keywords" content="bryllup, wedding, Kristine, Halfdan, Château des Salles, Provence, juni 2026">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kristine-halfdan-bryllup.com/">
+  <meta property="og:title" content="Bryllup Kristine & Halfdan - 12. juni 2026">
+  <meta property="og:description" content="Vi gifter oss i det vakre Château des Salles i Provence. Bli med oss på denne spesielle dagen!">
+  <meta property="og:image" content="https://kristine-halfdan-bryllup.com/assets/hero-placeholder.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://kristine-halfdan-bryllup.com/">
+  <meta property="twitter:title" content="Bryllup Kristine & Halfdan - 12. juni 2026">
+  <meta property="twitter:description" content="Vi gifter oss i det vakre Château des Salles i Provence. Bli med oss på denne spesielle dagen!">
+  <meta property="twitter:image" content="https://kristine-halfdan-bryllup.com/assets/hero-placeholder.jpg">
+  
+  <title>Bryllup Kristine & Halfdan - 12. juni 2026</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -23,18 +40,18 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
         <li><a href="#rsvp">RSVP</a></li>
         <li><a href="#galleri">Galleri</a></li>
       </ul>
-      <div class="hamburger">
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </div>
   </nav>
 
   <!-- Hero seksjon med nedtelling -->
   <section class="hero" id="hero">
     <div class="hero-background">
-      <img src="assets/hero-placeholder.jpg" alt="Bryllupsbilde" class="hero-img" loading="lazy">
+      <img src="assets/hero-placeholder.jpg" alt="Romantisk bilde av Kristine og Halfdan i vakre omgivelser" class="hero-img" loading="eager">
     </div>
     <div class="hero-content">
       <div class="hero-text">
@@ -128,11 +145,11 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
             <div class="info-icon">📍</div>
             <h3>Sted</h3>
             <p><strong>Château des Salles</strong></p>
-            <div class="venue-placeholder chateau-placeholder">
+            <div class="venue-placeholder chateau-placeholder" role="img" aria-label="Placeholder for Château des Salles photos">
               <div class="placeholder-text">Château des Salles</div>
             </div>
-            <a href="https://maps.google.com/?q=Château+des+Salles,+France" target="_blank" rel="noopener" class="btn-secondary">Se på kart</a>
-            <p><a href="https://www.chateaudessalles.fr" target="_blank" rel="noopener" class="btn-secondary" style="margin-top: 0.5rem;">Besøk nettside</a></p>
+            <a href="https://maps.google.com/?q=Château+des+Salles,+France" target="_blank" rel="noopener noreferrer" class="btn-secondary">Se på kart</a>
+            <p><a href="https://www.chateaudessalles.fr" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0.5rem;">Besøk nettside</a></p>
           </div>
           
           <div class="info-card">
@@ -147,7 +164,7 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
             <h3>Overnatting</h3>
             <p><strong>22 rom på Château des Salles</strong></p>
             <p>Prioriteres barnefamilier</p>
-            <p>Ekstra rom på <a href="https://rabiega.com" target="_blank" rel="noopener">Domaine Rabiega</a></p>
+            <p>Ekstra rom på <a href="https://rabiega.com" target="_blank" rel="noopener noreferrer">Domaine Rabiega</a></p>
             <p>Transport ordnes begge veier</p>
           </div>
           
@@ -156,11 +173,11 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
             <h3>Domaine Rabiega</h3>
             <p><strong>Boutique hotell med 26 rom</strong></p>
             <p>Organisk vingård og restaurant</p>
-            <div class="venue-placeholder rabiega-placeholder">
+            <div class="venue-placeholder rabiega-placeholder" role="img" aria-label="Placeholder for Domaine Rabiega photos">
               <div class="placeholder-text">Domaine Rabiega</div>
             </div>
-            <p><a href="https://rabiega.com" target="_blank" rel="noopener" class="btn-secondary">Besøk nettside</a></p>
-            <p><a href="https://maps.google.com/?q=Domaine+Rabiega,+735+Chemin+Saint+Joseph,+83300+Draguignan,+France" target="_blank" rel="noopener" class="btn-secondary" style="margin-top: 0.5rem;">Se på kart</a></p>
+            <p><a href="https://rabiega.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">Besøk nettside</a></p>
+            <p><a href="https://maps.google.com/?q=Domaine+Rabiega,+735+Chemin+Saint+Joseph,+83300+Draguignan,+France" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0.5rem;">Se på kart</a></p>
           </div>
         </div>
       </div>
@@ -171,26 +188,30 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
       <div class="container">
         <h2>RSVP</h2>
         <p class="rsvp-intro">Vennligst bekreft din deltakelse innen 1. juli</p>
-        <form action="https://formspree.io/f/xyz123" method="POST" autocomplete="on" class="rsvp-form">
+        <p class="rsvp-note"><small><em>Skjemaet sender svar via e-post. Din e-postklient vil åpnes når du sender.</em></small></p>
+        <form action="mailto:halvdan.bigset@gmail.com" method="POST" autocomplete="on" class="rsvp-form" novalidate data-formspree="https://formspree.io/f/xyz123">
           <div class="form-group">
             <label for="navn">Navn *</label>
-            <input type="text" id="navn" name="navn" required>
+            <input type="text" id="navn" name="navn" required aria-describedby="navn-error">
+            <div id="navn-error" class="error-message" role="alert"></div>
           </div>
           
           <div class="form-group">
             <label for="epost">E-post *</label>
-            <input type="email" id="epost" name="epost" required>
+            <input type="email" id="epost" name="epost" required aria-describedby="epost-error">
+            <div id="epost-error" class="error-message" role="alert"></div>
           </div>
           
           <div class="form-group">
             <label for="antall">Antall personer *</label>
-            <select id="antall" name="antall" required>
+            <select id="antall" name="antall" required aria-describedby="antall-error">
               <option value="">Velg antall</option>
               <option value="1">1 person</option>
               <option value="2">2 personer</option>
               <option value="3">3 personer</option>
               <option value="4">4 personer</option>
             </select>
+            <div id="antall-error" class="error-message" role="alert"></div>
           </div>
           
           <div class="form-group">
@@ -216,7 +237,10 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
             </select>
           </div>
           
-          <button type="submit" class="btn-primary">Send svar</button>
+          <div class="form-group">
+            <button type="submit" class="btn-primary">Send svar</button>
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </div>
         </form>
       </div>
     </section>
@@ -229,13 +253,13 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
         <p style="text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 2rem;">(Placeholder-bilder - ekte bilder av stedene kommer snart)</p>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <div class="venue-placeholder chateau-placeholder">
+            <div class="venue-placeholder chateau-placeholder" role="img" aria-label="Placeholder for Château des Salles photos">
               <div class="placeholder-text">Château des Salles</div>
             </div>
             <div class="gallery-caption">Château des Salles</div>
           </div>
           <div class="gallery-item">
-            <div class="venue-placeholder rabiega-placeholder">
+            <div class="venue-placeholder rabiega-placeholder" role="img" aria-label="Placeholder for Domaine Rabiega photos">
               <div class="placeholder-text">Domaine Rabiega</div>
             </div>
             <div class="gallery-caption">Domaine Rabiega</div>
