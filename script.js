@@ -333,9 +333,75 @@ ${navn}`);
   }
 
   
+  // --- Venue image galleries ---
+  const venueGalleries = document.querySelectorAll('.venue-gallery');
+  const galleryIntervals = new Map();
+  
+  function initializeGallery(gallery) {
+    const images = gallery.querySelectorAll('.venue-image');
+    const dots = gallery.querySelectorAll('.dot');
+    const venueType = gallery.dataset.venue;
+    let currentSlide = 0;
+    
+    if (images.length <= 1) return; // Skip if only one image
+    
+    function showSlide(index) {
+      // Hide all images and deactivate all dots
+      images.forEach(img => img.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Show current image and activate current dot
+      images[index].classList.add('active');
+      if (dots[index]) {
+        dots[index].classList.add('active');
+      }
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % images.length;
+      showSlide(currentSlide);
+    }
+    
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        // Reset auto-rotation timer
+        if (galleryIntervals.has(venueType)) {
+          clearInterval(galleryIntervals.get(venueType));
+        }
+        const interval = setInterval(nextSlide, 4000);
+        galleryIntervals.set(venueType, interval);
+      });
+    });
+    
+    // Start auto-rotation
+    const interval = setInterval(nextSlide, 4000); // Change image every 4 seconds
+    galleryIntervals.set(venueType, interval);
+    
+    // Pause rotation on hover, resume on leave
+    gallery.addEventListener('mouseenter', () => {
+      if (galleryIntervals.has(venueType)) {
+        clearInterval(galleryIntervals.get(venueType));
+      }
+    });
+    
+    gallery.addEventListener('mouseleave', () => {
+      const interval = setInterval(nextSlide, 4000);
+      galleryIntervals.set(venueType, interval);
+    });
+  }
+  
+  // Initialize all galleries
+  venueGalleries.forEach(initializeGallery);
+  
   // --- Cleanup on page unload ---
   window.addEventListener('beforeunload', () => {
     clearCountdownInterval();
+    // Clear all gallery intervals
+    galleryIntervals.forEach(interval => clearInterval(interval));
+    galleryIntervals.clear();
   });
   
 })();

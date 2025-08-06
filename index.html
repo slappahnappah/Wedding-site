@@ -145,8 +145,15 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
             <div class="info-icon">📍</div>
             <h3>Sted</h3>
             <p><strong>Château des Salles</strong></p>
-            <div class="venue-placeholder chateau-placeholder" role="img" aria-label="Placeholder for Château des Salles photos">
-              <div class="placeholder-text">Château des Salles</div>
+            <div class="venue-gallery" data-venue="chateau">
+              <img src="assets/CLS1.jpg" alt="Château des Salles - Exterior view" class="venue-image active" loading="lazy">
+              <img src="assets/CLS2.jpg" alt="Château des Salles - Garden view" class="venue-image" loading="lazy">
+              <img src="assets/CLS3.jpg" alt="Château des Salles - Interior" class="venue-image" loading="lazy">
+              <div class="gallery-dots">
+                <button class="dot active" data-slide="0" aria-label="Show image 1"></button>
+                <button class="dot" data-slide="1" aria-label="Show image 2"></button>
+                <button class="dot" data-slide="2" aria-label="Show image 3"></button>
+              </div>
             </div>
             <a href="https://maps.google.com/?q=Château+des+Salles,+France" target="_blank" rel="noopener noreferrer" class="btn-secondary">Se på kart</a>
             <p><a href="https://www.chateaudessalles.fr" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0.5rem;">Besøk nettside</a></p>
@@ -173,8 +180,17 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
             <h3>Domaine Rabiega</h3>
             <p><strong>Boutique hotell med 26 rom</strong></p>
             <p>Organisk vingård og restaurant</p>
-            <div class="venue-placeholder rabiega-placeholder" role="img" aria-label="Placeholder for Domaine Rabiega photos">
-              <div class="placeholder-text">Domaine Rabiega</div>
+            <div class="venue-gallery" data-venue="rabiega">
+              <img src="assets/DR1.jpg" alt="Domaine Rabiega - Vineyard view" class="venue-image active" loading="lazy">
+              <img src="assets/DR2.jpg" alt="Domaine Rabiega - Hotel exterior" class="venue-image" loading="lazy">
+              <img src="assets/DR3.jpg" alt="Domaine Rabiega - Restaurant" class="venue-image" loading="lazy">
+              <img src="assets/DR4.jpg" alt="Domaine Rabiega - Interior" class="venue-image" loading="lazy">
+              <div class="gallery-dots">
+                <button class="dot active" data-slide="0" aria-label="Show image 1"></button>
+                <button class="dot" data-slide="1" aria-label="Show image 2"></button>
+                <button class="dot" data-slide="2" aria-label="Show image 3"></button>
+                <button class="dot" data-slide="3" aria-label="Show image 4"></button>
+              </div>
             </div>
             <p><a href="https://rabiega.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">Besøk nettside</a></p>
             <p><a href="https://maps.google.com/?q=Domaine+Rabiega,+735+Chemin+Saint+Joseph,+83300+Draguignan,+France" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0.5rem;">Se på kart</a></p>
@@ -253,14 +269,19 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
         <p style="text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 2rem;">(Placeholder-bilder - ekte bilder av stedene kommer snart)</p>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <div class="venue-placeholder chateau-placeholder" role="img" aria-label="Placeholder for Château des Salles photos">
-              <div class="placeholder-text">Château des Salles</div>
+            <div class="venue-gallery gallery-preview" data-venue="chateau-preview">
+              <img src="assets/CLS1.jpg" alt="Château des Salles - Exterior view" class="venue-image active" loading="lazy">
+              <img src="assets/CLS2.jpg" alt="Château des Salles - Garden view" class="venue-image" loading="lazy">
+              <img src="assets/CLS3.jpg" alt="Château des Salles - Interior" class="venue-image" loading="lazy">
             </div>
             <div class="gallery-caption">Château des Salles</div>
           </div>
           <div class="gallery-item">
-            <div class="venue-placeholder rabiega-placeholder" role="img" aria-label="Placeholder for Domaine Rabiega photos">
-              <div class="placeholder-text">Domaine Rabiega</div>
+            <div class="venue-gallery gallery-preview" data-venue="rabiega-preview">
+              <img src="assets/DR1.jpg" alt="Domaine Rabiega - Vineyard view" class="venue-image active" loading="lazy">
+              <img src="assets/DR2.jpg" alt="Domaine Rabiega - Hotel exterior" class="venue-image" loading="lazy">
+              <img src="assets/DR3.jpg" alt="Domaine Rabiega - Restaurant" class="venue-image" loading="lazy">
+              <img src="assets/DR4.jpg" alt="Domaine Rabiega - Interior" class="venue-image" loading="lazy">
             </div>
             <div class="gallery-caption">Domaine Rabiega</div>
           </div>
