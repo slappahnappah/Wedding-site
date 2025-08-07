@@ -53,4 +53,3 @@ This is a static site with no build tools, package managers, or dependencies bey
 
 To serve locally, simply open `index.html` in a browser or use any static file server.
 
-222112
