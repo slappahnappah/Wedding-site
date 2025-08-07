@@ -25,7 +25,7 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
   
   <title>Bryllup Kristine & Halfdan - 12. juni 2026</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Navigasjon -->
@@ -140,11 +140,28 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
     <section class="info" id="info">
       <div class="container">
         <h2>Praktisk informasjon</h2>
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="info-icon">📍</div>
-            <h3>Sted</h3>
-            <p><strong>Château des Salles</strong></p>
+        
+        <!-- Top Row: Kleskode and Overnatting -->
+        <div class="info-top-row">
+          <div class="info-section center-aligned">
+            <h3>Kleskode</h3>
+            <p><strong>Lett sommerpent</strong></p>
+            <p>Sommer- eller lindress</p>
+          </div>
+          
+          <div class="info-section center-aligned">
+            <h3>Overnatting</h3>
+            <p><strong>22 rom på Château des Salles</strong></p>
+            <p>Prioriteres barnefamilier</p>
+            <p>Ekstra rom på <a href="https://rabiega.com" target="_blank" rel="noopener noreferrer">Domaine Rabiega</a></p>
+            <p>Transport ordnes begge veier</p>
+          </div>
+        </div>
+        
+        <!-- Bottom Row: Venues -->
+        <div class="info-bottom-row">
+          <div class="venue-section center-aligned">
+            <h3>Château des Salles</h3>
             <div class="venue-gallery" data-venue="chateau">
               <img src="assets/CLS1.jpg" alt="Château des Salles - Exterior view" class="venue-image active" loading="lazy">
               <img src="assets/CLS2.jpg" alt="Château des Salles - Garden view" class="venue-image" loading="lazy">
@@ -155,31 +172,13 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
                 <button class="dot" data-slide="2" aria-label="Show image 3"></button>
               </div>
             </div>
+            <p>Vielseslokalet i hjertet av Provence</p>
             <a href="https://maps.google.com/?q=Château+des+Salles,+France" target="_blank" rel="noopener noreferrer" class="btn-secondary">Se på kart</a>
-            <p><a href="https://www.chateaudessalles.fr" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0.5rem;">Besøk nettside</a></p>
+            <a href="https://www.chateaudessalles.fr" target="_blank" rel="noopener noreferrer" class="btn-secondary">Besøk nettside</a>
           </div>
           
-          <div class="info-card">
-            <div class="info-icon">👗</div>
-            <h3>Kleskode</h3>
-            <p><strong>Lett sommerpent</strong></p>
-            <p>Sommer- eller lindress</p>
-          </div>
-          
-          <div class="info-card">
-            <div class="info-icon">🛏️</div>
-            <h3>Overnatting</h3>
-            <p><strong>22 rom på Château des Salles</strong></p>
-            <p>Prioriteres barnefamilier</p>
-            <p>Ekstra rom på <a href="https://rabiega.com" target="_blank" rel="noopener noreferrer">Domaine Rabiega</a></p>
-            <p>Transport ordnes begge veier</p>
-          </div>
-          
-          <div class="info-card">
-            <div class="info-icon">🏨</div>
+          <div class="venue-section center-aligned">
             <h3>Domaine Rabiega</h3>
-            <p><strong>Boutique hotell med 26 rom</strong></p>
-            <p>Organisk vingård og restaurant</p>
             <div class="venue-gallery" data-venue="rabiega">
               <img src="assets/DR1.jpg" alt="Domaine Rabiega - Vineyard view" class="venue-image active" loading="lazy">
               <img src="assets/DR2.jpg" alt="Domaine Rabiega - Hotel exterior" class="venue-image" loading="lazy">
@@ -192,8 +191,9 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
                 <button class="dot" data-slide="3" aria-label="Show image 4"></button>
               </div>
             </div>
-            <p><a href="https://rabiega.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">Besøk nettside</a></p>
-            <p><a href="https://maps.google.com/?q=Domaine+Rabiega,+735+Chemin+Saint+Joseph,+83300+Draguignan,+France" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0.5rem;">Se på kart</a></p>
+            <p>Boutique hotell med 26 rom</p>
+            <a href="https://maps.google.com/?q=Domaine+Rabiega,+735+Chemin+Saint+Joseph,+83300+Draguignan,+France" target="_blank" rel="noopener noreferrer" class="btn-secondary">Se på kart</a>
+            <a href="https://rabiega.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">Besøk nettside</a>
           </div>
         </div>
       </div>
