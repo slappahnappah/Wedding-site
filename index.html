@@ -37,7 +37,6 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
       <ul class="nav-menu">
         <li><a href="#program">Program</a></li>
         <li><a href="#info">Praktisk</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
         <li><a href="#galleri">Galleri</a></li>
       </ul>
       <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -200,68 +199,6 @@ README: For å endre datoer, oppdater seksjonen "Program" og nedtellingen i hero
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- RSVP-skjema seksjon -->
-    <section class="rsvp" id="rsvp">
-      <div class="container">
-        <h2>RSVP</h2>
-        <p class="rsvp-intro">Vennligst bekreft din deltakelse innen 1. juli</p>
-        <p class="rsvp-note"><small><em>Skjemaet sender svar via e-post. Din e-postklient vil åpnes når du sender.</em></small></p>
-        <form action="mailto:halvdan.bigset@gmail.com" method="POST" autocomplete="on" class="rsvp-form" novalidate data-formspree="https://formspree.io/f/xyz123">
-          <div class="form-group">
-            <label for="navn">Navn *</label>
-            <input type="text" id="navn" name="navn" required aria-describedby="navn-error">
-            <div id="navn-error" class="error-message" role="alert"></div>
-          </div>
-          
-          <div class="form-group">
-            <label for="epost">E-post *</label>
-            <input type="email" id="epost" name="epost" required aria-describedby="epost-error">
-            <div id="epost-error" class="error-message" role="alert"></div>
-          </div>
-          
-          <div class="form-group">
-            <label for="antall">Antall personer *</label>
-            <select id="antall" name="antall" required aria-describedby="antall-error">
-              <option value="">Velg antall</option>
-              <option value="1">1 person</option>
-              <option value="2">2 personer</option>
-              <option value="3">3 personer</option>
-              <option value="4">4 personer</option>
-            </select>
-            <div id="antall-error" class="error-message" role="alert"></div>
-          </div>
-          
-          <div class="form-group">
-            <label for="allergier">Allergier eller spesielle kosthold</label>
-            <textarea id="allergier" name="allergier" placeholder="Skriv eventuelle allergier eller spesielle kostholdskrav"></textarea>
-          </div>
-          
-          <div class="form-group">
-            <label for="rom-lesalles">Ønsker du rom på Château des Salles?</label>
-            <select id="rom-lesalles" name="rom-lesalles">
-              <option value="">Velg</option>
-              <option value="ja">Ja, takk</option>
-              <option value="nei">Nei, takk</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="rom-rabiega">Ønsker du rom på Domaine Rabiega?</label>
-            <select id="rom-rabiega" name="rom-rabiega">
-              <option value="">Velg</option>
-              <option value="ja">Ja, takk</option>
-              <option value="nei">Nei, takk</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <button type="submit" class="btn-primary">Send svar</button>
-            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-          </div>
-        </form>
       </div>
     </section>
 
