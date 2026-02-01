@@ -646,46 +646,73 @@ body {
   border-radius: 1px;
 }
 
-/* Top sections: Overnatting and Bekledning - stacked vertically, Overnatting first */
-.info-top-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 4rem;
+/* Overnatting and Bekledning - full-width blocks like intro section */
+.info-practical {
   margin-bottom: 8rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.info-section {
-  background: transparent;
-  padding: 0;
-  position: relative;
+.info-practical-block {
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  position: relative;
 }
 
-.info-section-overnatting {
+.info-practical-block:last-child {
+  margin-bottom: 0;
+}
+
+.info-practical-overnatting {
   text-align: left;
 }
 
-.info-section-overnatting h3 {
+.info-practical-overnatting h3 {
   text-align: left;
 }
 
-.info-section-overnatting h3::after {
+.info-practical-overnatting h3::after {
   left: 0;
   transform: none;
 }
 
-.info-section-overnatting p {
+.info-practical-overnatting p {
   text-align: left;
 }
 
-.info-section-bekledning {
+.info-practical-bekledning {
   text-align: center;
   padding-top: 2rem;
   border-top: 1px solid var(--border);
+}
+
+.info-practical-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.info-practical-block h3::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 1px;
+}
+
+.info-practical-block p {
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 /* Bottom row: Clean venue sections */
@@ -1422,10 +1449,9 @@ body {
     font-size: 2.2rem;
   }
   
-  .info-top-row {
-    gap: 2.5rem;
-    margin-bottom: 4rem;
-    padding: 0 1rem;
+  .info-practical-block {
+    margin-bottom: 3rem;
+    padding: 0 0.5rem;
   }
   
   .info-bottom-row {
