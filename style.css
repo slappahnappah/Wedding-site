@@ -372,7 +372,7 @@ body {
 .wedding-day {
   font-size: 1.5rem;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
 }
 
 /* Elegant Main Content */
@@ -403,7 +403,7 @@ body {
 .intro-content {
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   position: relative;
 }
 
@@ -458,7 +458,7 @@ body {
 }
 
 .program h2 {
-  text-align: center;
+  text-align: left;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 400;
@@ -472,8 +472,8 @@ body {
   content: '';
   position: absolute;
   bottom: -1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  transform: none;
   width: 80px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -519,7 +519,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.02em;
   position: relative;
 }
@@ -528,8 +528,8 @@ body {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  transform: none;
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -706,7 +706,7 @@ body {
 }
 
 .info-practical-overnatting {
-  text-align: left;
+  text-align: center;
 }
 
 .info-practical-overnatting h3 {
@@ -719,7 +719,7 @@ body {
 }
 
 .info-practical-overnatting p {
-  text-align: left;
+  text-align: center;
 }
 
 /* Travel Dropdown Styles */
@@ -739,11 +739,8 @@ body {
   color: var(--primary);
   letter-spacing: 0.02em;
   list-style: none;
-  /* Remove default triangle */
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
 }
 
 .travel-dropdown summary::-webkit-details-marker {
@@ -757,6 +754,10 @@ body {
   color: var(--secondary);
   font-family: 'Inter', sans-serif;
   font-weight: 300;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .travel-dropdown[open] summary::after {
@@ -797,9 +798,11 @@ body {
 }
 
 .dropdown-content ul {
-  padding-left: 1.5rem;
+  padding-left: 0;
   margin-bottom: 1.5rem;
   color: var(--text-light);
+  list-style-position: inside;
+  text-align: center;
 }
 
 .dropdown-content ul li {
@@ -814,7 +817,7 @@ body {
 }
 
 .info-practical-bekledning {
-  text-align: left;
+  text-align: center;
   padding-top: 2rem;
   border-top: 1px solid var(--border);
 }
@@ -847,6 +850,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   font-size: 1.1rem;
+  text-align: center;
 }
 
 /* Bottom row: Clean venue sections */
@@ -870,7 +874,7 @@ body {
 
 .venue-content {
   padding: 2rem 0 0 0;
-  text-align: left;
+  text-align: center;
 }
 
 .venue-section .venue-gallery {
@@ -888,7 +892,7 @@ body {
 
 .venue-section p {
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-align: center;
   font-size: 1.1rem;
 }
 
