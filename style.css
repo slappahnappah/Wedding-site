@@ -422,8 +422,8 @@ body {
   content: '';
   position: absolute;
   bottom: -1rem;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -458,7 +458,7 @@ body {
 }
 
 .program h2 {
-  text-align: left;
+  text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 400;
@@ -472,8 +472,8 @@ body {
   content: '';
   position: absolute;
   bottom: -1.5rem;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   width: 80px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -519,7 +519,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   letter-spacing: 0.02em;
   position: relative;
 }
@@ -528,8 +528,8 @@ body {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -544,8 +544,8 @@ body {
   content: '✨';
   position: absolute;
   top: -0.5rem;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1.5rem;
   color: var(--accent);
 }
@@ -667,7 +667,7 @@ body {
 }
 
 .info h2 {
-  text-align: left;
+  text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 400;
@@ -681,8 +681,8 @@ body {
   content: '';
   position: absolute;
   bottom: -1.5rem;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   width: 80px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -710,12 +710,12 @@ body {
 }
 
 .info-practical-overnatting h3 {
-  text-align: left;
+  text-align: center;
 }
 
 .info-practical-overnatting h3::after {
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .info-practical-overnatting p {
@@ -734,10 +734,10 @@ body {
   cursor: pointer;
   padding: 1.5rem 0;
   font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 2rem;
   color: var(--primary);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   list-style: none;
   /* Remove default triangle */
   position: relative;
@@ -833,8 +833,8 @@ body {
   content: '';
   position: absolute;
   bottom: -1rem;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   width: 40px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -905,7 +905,7 @@ body {
   margin-bottom: 2rem;
   color: var(--primary);
   letter-spacing: 0.02em;
-  text-align: left;
+  text-align: center;
   position: relative;
 }
 
@@ -913,8 +913,8 @@ body {
   content: '';
   position: absolute;
   bottom: -1rem;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   width: 40px;
   height: 2px;
   background: linear-gradient(90deg, var(--secondary), var(--accent));
@@ -928,7 +928,7 @@ body {
   margin-bottom: 1.5rem;
   color: var(--primary);
   letter-spacing: 0.02em;
-  text-align: left;
+  text-align: center;
 }
 
 .info-section p,
@@ -1085,7 +1085,7 @@ body {
 }
 
 .rsvp h2 {
-  text-align: left;
+  text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 400;
@@ -1313,7 +1313,7 @@ body {
 }
 
 .galleri h2 {
-  text-align: left;
+  text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 400;
@@ -1475,8 +1475,8 @@ body {
   content: '';
   position: absolute;
   bottom: -0.5rem;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
   width: 40px;
   height: 1px;
   background: var(--secondary);
