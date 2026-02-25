@@ -782,19 +782,19 @@ body {
 }
 
 .dropdown-content h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  color: var(--primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
   margin: 2rem 0 1rem 0;
-  letter-spacing: 0.05em;
 }
 
 .dropdown-content h5 {
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  color: var(--secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
   margin: 1.5rem 0 0.5rem 0;
-  letter-spacing: 0.05em;
 }
 
 .dropdown-content ul {
