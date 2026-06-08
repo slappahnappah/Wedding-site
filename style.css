@@ -1,19 +1,32 @@
 /*
-Fargepalett:
-  Bakgrunn: #F6E9E1
-  Aksent: #A66C6C
-  Tekst: #3D405B
-Typografi:
-  Overskrifter: Playfair Display
-  Brødtekst: Inter
+French Provence Wine Château Palette:
+  Background: Warm aged stone & linen (off-whites/creams)
+  Primary: Deep olive green (vineyards)
+  Secondary: Terracotta (roofs/clay)
+  Accent: Aged gold
+  Text: Warm dark grey
+Typography:
+  Headings: Playfair Display (elegant serif)
+  Body: Inter (clean sans-serif)
 */
 :root {
-  --bg: #F6E9E1;
-  --accent: #A66C6C;
-  --text: #3D405B;
+  --bg-primary: #faf7f2;
+  --bg-secondary: #f4f0e6;
+  --bg-accent: #ffffff;
+  --primary: #3a4f41;
+  --secondary: #c17767;
+  --accent: #d4af37;
+  --text: #3a3532;
+  --text-light: #6a625d;
+  --text-muted: #9c948e;
+  --border: rgba(58, 79, 65, 0.15);
+  --border-light: rgba(193, 119, 103, 0.2);
   --max-width: 1200px;
   --border-radius: 12px;
-  --shadow: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow: 0 4px 30px rgba(58, 79, 65, 0.1);
+  --shadow-light: 0 2px 15px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 40px rgba(58, 79, 65, 0.15);
+  --gradient: linear-gradient(135deg, #faf7f2 0%, #f4f0e6 100%);
 }
 
 * {
@@ -28,11 +41,13 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background: var(--bg-primary);
   color: var(--text);
-  font-family: 'Inter', Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
   overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
 
 .container {
@@ -41,21 +56,23 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Navigasjon */
+/* Elegant Navigation */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(246, 233, 225, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(254, 252, 248, 0.95);
+  backdrop-filter: blur(20px);
   z-index: 1000;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
+  padding: 2rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar.scrolled {
-  background: rgba(246, 233, 225, 0.98);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  background: rgba(254, 252, 248, 0.98);
+  box-shadow: var(--shadow-light);
+  padding: 1.2rem 0;
 }
 
 .nav-container {
@@ -69,10 +86,31 @@ body {
 
 .nav-logo a {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: var(--accent);
+  font-size: 1.4rem;
+  color: var(--primary);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.nav-date {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-date {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
 }
 
 .nav-menu {
@@ -82,26 +120,29 @@ body {
 }
 
 .nav-menu a {
-  color: var(--text);
+  color: var(--text-light);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
   position: relative;
 }
 
 .nav-menu a:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .nav-menu a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -8px;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1px;
 }
 
 .nav-menu a:hover::after {
@@ -112,17 +153,25 @@ body {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
-  background: var(--accent);
-  margin: 3px 0;
+  width: 22px;
+  height: 2px;
+  background: var(--primary);
+  margin: 4px 0;
   transition: 0.3s;
+  display: block;
 }
 
-/* Hero seksjon */
+/* Elegant Hero Section */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -130,6 +179,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: var(--gradient);
 }
 
 .hero-background {
@@ -141,58 +191,146 @@ body {
   z-index: 1;
 }
 
+.hero-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 25%, transparent 60%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.6);
+  object-position: center top;
+  filter: brightness(0.85) saturate(1.1);
+  /* Slightly brighter image since we took away the middle blur */
+  transition: all 0.6s ease;
+}
+
+.hero:hover .hero-img {
+  transform: scale(1.02);
+  filter: brightness(0.9) saturate(1.2);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  text-align: center;
+  z-index: 3;
+  text-align: left;
   color: white;
-  max-width: 800px;
-  padding: 0 2rem;
+  width: 100%;
+  max-width: 900px;
+  height: 100vh;
+  padding: 15vh 2rem 8vh 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: 4.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
   color: white;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  animation: fadeInScale 1.5s ease-out 0.3s both;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .heart {
-  color: #ff6b6b;
-  animation: pulse 2s infinite;
+  color: var(--accent);
+  font-weight: 400;
+  margin: 0 0.8rem;
+  display: inline-block;
+  animation: heartPulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+@keyframes heartPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
   font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.95;
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.95;
+  }
 }
 
 .wedding-date {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-out 0.9s both;
 }
 
 .countdown-container {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  border: 1px solid rgba(255,255,255,0.2);
+  padding: 1.5rem 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  animation: fadeInUp 1s ease-out 1.2s both;
+  position: relative;
+}
+
+.countdown-container::before {
+  display: none;
 }
 
 .countdown {
@@ -208,22 +346,27 @@ body {
 }
 
 .countdown-item {
-  text-align: center;
+  text-align: left;
 }
 
 .countdown-number {
   display: block;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 300;
   color: white;
+  line-height: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .countdown-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   opacity: 0.9;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-top: 0.3rem;
+  font-weight: 400;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .wedding-day {
@@ -232,171 +375,652 @@ body {
   text-align: center;
 }
 
-/* Hovedinnhold */
+/* Elegant Main Content */
 .main-content {
   position: relative;
   z-index: 2;
-  background: var(--bg);
+  background: var(--bg-primary);
 }
 
-/* Bryllupstekst seksjon */
+/* Wedding Introduction Section */
 .wedding-intro {
-  padding: 4rem 0;
-  background: white;
+  padding: 8rem 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.wedding-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(193, 119, 103, 0.03) 0%, rgba(212, 175, 55, 0.03) 100%);
+  pointer-events: none;
 }
 
 .intro-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
 }
 
 .intro-content h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--accent);
-  font-weight: 500;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  position: relative;
+}
+
+.intro-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 1px;
 }
 
 .intro-content p {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text);
-  margin-bottom: 1.5rem;
-  font-weight: 300;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
-/* Program seksjon */
+/* Elegant Timeline Program Section */
 .program {
-  padding: 5rem 0;
+  padding: 8rem 0;
+  background: var(--bg-accent);
+  position: relative;
+}
+
+.program::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(58, 79, 65, 0.02) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .program h2 {
-  text-align: center;
+  text-align: left;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin-bottom: 3rem;
-  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 5rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.program h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  transform: none;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 1px;
 }
 
 .program-simple {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 .program-day {
-  margin-bottom: 3rem;
-  background: white;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+  margin-bottom: 6rem;
+  background: transparent;
+  position: relative;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.program-day:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  left: 0;
+  transform: none;
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .program-day.main-day {
-  border: 3px solid var(--accent);
+  border: none;
+  position: relative;
 }
 
 .program-day h3 {
-  background: var(--accent);
-  color: white;
-  padding: 1.5rem;
-  margin: 0;
+  background: transparent;
+  color: var(--primary);
+  padding: 0 0 2rem 0;
+  margin: 0 0 3rem 0;
   font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.program-day h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: none;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 1px;
+}
+
+.program-day.main-day h3 {
+  color: var(--secondary);
+}
+
+.program-day.main-day h3::before {
+  content: '✨';
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1.5rem;
-  font-weight: 500;
+  color: var(--accent);
 }
 
 .event-simple {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-  padding: 1.5rem;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.3s ease;
-}
-
-.event-simple:last-child {
-  border-bottom: none;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem 0;
+  border: none;
+  transition: all 0.3s ease;
+  background: transparent;
+  position: relative;
 }
 
 .event-simple:hover {
-  background: rgba(166, 108, 108, 0.05);
+  transform: translateX(10px);
 }
 
 .event-simple.highlight {
-  background: rgba(166, 108, 108, 0.1);
-  border-left: 4px solid var(--accent);
+  position: relative;
+}
+
+.event-simple.highlight::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(193, 119, 103, 0.2);
+}
+
+.event-simple.highlight {
+  background: transparent;
+  border: none;
+  position: relative;
+}
+
+.event-simple.highlight::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--secondary);
+  border-radius: 50%;
 }
 
 .time {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 1.1rem;
-  min-width: 60px;
+  font-weight: 500;
+  color: var(--secondary);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-width: 100px;
+  flex-shrink: 0;
+  text-align: left;
+  background: transparent;
+  padding: 0;
+  border: none;
+  position: relative;
+}
+
+.time::after {
+  content: '';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 20px;
+  background: var(--border);
+}
+
+.event-details {
+  flex-grow: 1;
+  text-align: left;
 }
 
 .event-details h4 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
   margin-bottom: 0.5rem;
   color: var(--text);
+  letter-spacing: 0.01em;
 }
 
 .event-details p {
-  color: #666;
-  font-size: 0.95rem;
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-/* Praktisk info */
+/* Elegant Practical Information */
 .info {
-  padding: 5rem 0;
-  background: white;
+  padding: 8rem 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(193, 119, 103, 0.03) 100%);
+  pointer-events: none;
 }
 
 .info h2 {
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin-bottom: 3rem;
-  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 5rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  position: relative;
 }
 
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.info h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 1px;
 }
 
-.info-card {
-  background: var(--bg);
-  padding: 2rem;
-  border-radius: var(--border-radius);
+/* Overnatting and Bekledning - full-width blocks like intro section */
+.info-practical {
+  margin-bottom: 8rem;
+}
+
+.info-practical-block {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  position: relative;
+}
+
+.info-practical-block:last-child {
+  margin-bottom: 0;
+}
+
+.info-practical-overnatting {
   text-align: center;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
 }
 
-.info-card:hover {
+.info-practical-overnatting h3 {
+  text-align: center;
+}
+
+.info-practical-overnatting h3::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.info-practical-overnatting p {
+  text-align: center;
+}
+
+/* Travel Dropdown Styles */
+.travel-dropdown {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.travel-dropdown summary {
+  cursor: pointer;
+  padding: 1.5rem 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  list-style: none;
+  position: relative;
+  text-align: center;
+}
+
+.travel-dropdown summary::-webkit-details-marker {
+  display: none;
+  /* Safari */
+}
+
+.travel-dropdown summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--secondary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.travel-dropdown[open] summary::after {
+  content: '−';
+}
+
+.dropdown-content {
+  padding: 0 0 2rem 0;
+  animation: dropFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes dropFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-content h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 2rem 0 1rem 0;
+}
+
+.dropdown-content h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.dropdown-content ul {
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  list-style-position: inside;
+  text-align: center;
+}
+
+.dropdown-content ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.dropdown-content hr {
+  border: none;
+  border-top: 1px dashed var(--border-light);
+  margin: 2.5rem 0;
+}
+
+.info-practical-bekledning {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.info-practical-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.info-practical-block h3::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 1px;
+}
+
+.info-practical-block p {
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Bottom row: Clean venue sections */
+.info-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.venue-section {
+  background: transparent;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.venue-section:hover {
   transform: translateY(-5px);
 }
 
-.info-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.venue-content {
+  padding: 2rem 0 0 0;
+  text-align: center;
 }
 
-.info-card h3 {
+.venue-section .venue-gallery {
+  height: 300px;
+  margin: 0 0 2rem 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.venue-section:hover .venue-gallery {
+  box-shadow: var(--shadow-hover);
+}
+
+.venue-section p {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.venue-section a {
+  margin: 0.8rem;
+  display: inline-block;
+}
+
+/* Section headings - clean and minimal */
+.info-section h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  text-align: center;
+  position: relative;
 }
 
-.info-card p {
-  margin-bottom: 0.5rem;
+.info-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 1px;
 }
 
+.venue-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.info-section p,
+.venue-content p {
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.info-section p strong,
+.venue-content p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Venue image galleries */
+.venue-gallery {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: var(--border-radius);
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.venue-gallery:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.venue-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: var(--border-radius);
+}
+
+.venue-image.active {
+  opacity: 1;
+}
+
+.gallery-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  transform: none;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: rgba(212, 175, 55, 0.9);
+  border-color: rgba(212, 175, 55, 1);
+  transform: scale(1.1);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Gallery preview (bottom section) - no dots, just rotation */
+.gallery-preview .gallery-dots {
+  display: none;
+}
+
+/* Legacy placeholder styles - kept for any remaining placeholders */
 .venue-placeholder {
   width: 100%;
   height: 200px;
@@ -415,93 +1039,160 @@ body {
   transform: scale(1.02);
 }
 
-.chateau-placeholder {
-  background: linear-gradient(135deg, #f8f4f0 0%, #e8d5c4 100%);
-}
-
-.rabiega-placeholder {
-  background: linear-gradient(135deg, #f0f8f0 0%, #c4e8c4 100%);
-}
-
 .venue-placeholder .placeholder-text {
   color: var(--accent);
   font-weight: 600;
   font-size: 1.1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .btn-secondary {
   display: inline-block;
-  background: var(--accent);
+  background: var(--secondary);
   color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
   text-decoration: none;
-  margin-top: 1rem;
-  transition: background 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 15px rgba(193, 119, 103, 0.2);
+  text-align: left;
 }
 
 .btn-secondary:hover {
-  background: #8c4e4e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 25px rgba(193, 119, 103, 0.3);
+  background: transparent;
+  color: var(--secondary);
 }
 
-/* RSVP */
+/* Elegant RSVP Section */
 .rsvp {
-  padding: 5rem 0;
+  padding: 8rem 0;
+  background: var(--bg-accent);
+  position: relative;
+}
+
+.rsvp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(193, 119, 103, 0.03) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .rsvp h2 {
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.rsvp h2::after {
+  content: '💍';
+  position: absolute;
+  top: -0.5rem;
+  right: -3rem;
+  font-size: 2rem;
+  animation: heartPulse 2s ease-in-out infinite;
 }
 
 .rsvp-intro {
-  text-align: center;
+  text-align: left;
   font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.rsvp-note {
+  text-align: left;
   margin-bottom: 3rem;
-  color: #666;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .rsvp-form {
   max-width: 600px;
   margin: 0 auto;
-  background: white;
-  padding: 3rem;
+  background: var(--bg-primary);
+  padding: 4rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.rsvp-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
 }
 
 .form-group {
   margin-bottom: 1.5rem;
 }
 
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
 .form-group label {
   display: block;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  font-family: 'Playfair Display', serif;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 1.2rem;
+  border: 2px solid var(--border);
+  border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  background: var(--bg-accent);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(193, 119, 103, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: var(--secondary);
 }
 
 .form-group textarea {
@@ -510,47 +1201,166 @@ body {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--primary);
   color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 25px;
+  border: 1px solid var(--primary);
+  padding: 1.5rem 3rem;
+  border-radius: 4px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 4px 20px rgba(58, 79, 65, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background: #8c4e4e;
+  background: var(--bg-primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(58, 79, 65, 0.3);
 }
 
-/* Galleri */
+.btn-primary:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-primary:disabled::before {
+  display: none;
+}
+
+/* Form validation styles */
+.error-message {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.form-group input.error,
+.form-group select.error {
+  border-color: #d32f2f;
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: left;
+  font-weight: 500;
+  display: none;
+}
+
+.form-status.success {
+  background: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+  display: block;
+}
+
+.form-status.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #f44336;
+  display: block;
+}
+
+.form-status.loading {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #2196f3;
+  display: block;
+}
+
+/* Elegant Gallery Section */
 .galleri {
-  padding: 5rem 0;
-  background: white;
+  padding: 8rem 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.galleri::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(193, 119, 103, 0.03) 100%);
+  pointer-events: none;
 }
 
 .galleri h2 {
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.galleri h2::after {
+  content: '📸';
+  position: absolute;
+  top: -0.5rem;
+  right: -3rem;
+  font-size: 2rem;
+  animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .gallery-intro {
-  text-align: center;
+  text-align: left;
   font-size: 1.2rem;
-  margin-bottom: 3rem;
-  color: #666;
+  margin-bottom: 4rem;
+  color: var(--text-light);
+  font-weight: 400;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .gallery-item {
@@ -558,11 +1368,24 @@ body {
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg-accent);
 }
 
 .gallery-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  z-index: 2;
 }
 
 .gallery-image {
@@ -570,6 +1393,17 @@ body {
   height: 200px;
   object-fit: cover;
   display: block;
+}
+
+/* Venue galleries in praktisk section */
+.venue-section .venue-gallery {
+  margin: 1.5rem 0;
+  height: 250px;
+}
+
+.gallery-item .venue-gallery {
+  margin: 0;
+  height: 200px;
 }
 
 .gallery-item .venue-placeholder {
@@ -585,7 +1419,7 @@ body {
   background: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 0.5rem;
-  text-align: center;
+  text-align: left;
   font-weight: 500;
 }
 
@@ -604,34 +1438,70 @@ body {
   font-style: italic;
 }
 
-/* Footer */
+/* Elegant Footer */
 .footer {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--primary) 0%, #1e2f24 100%);
   color: white;
-  padding: 3rem 0;
+  padding: 5rem 0 3rem;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .footer h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
   color: white;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.footer h3::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--secondary);
 }
 
 .footer a {
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
+  font-weight: 400;
+  transition: all 0.3s ease;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.footer p {
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 /* Responsivitet */
@@ -642,50 +1512,54 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(246, 233, 225, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 1rem 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   .nav-menu.active {
     display: flex;
   }
-  
+
+  .nav-menu li {
+    padding: 0.5rem 0;
+  }
+
   .nav-menu li {
     margin: 0.5rem 0;
   }
-  
+
   .hamburger {
     display: flex;
   }
-  
+
   .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(4px, 4px);
   }
-  
+
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(6px, -6px);
   }
-  
+
   .countdown-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
-  
+
   .countdown-number {
     font-size: 1.5rem;
   }
-  
+
   .hero-text h1 {
     font-size: 2.5rem;
   }
-  
+
   .program h2,
   .info h2,
   .rsvp h2,
@@ -693,35 +1567,79 @@ body {
   .intro-content h2 {
     font-size: 2rem;
   }
-  
+
   .program-day {
     margin: 0 1rem 2rem 1rem;
   }
-  
+
   .event-simple {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .rsvp-form {
     margin: 0 1rem;
     padding: 2rem;
   }
-  
-  .info-grid {
+
+  /* Responsive design for mobile */
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .intro-content h2,
+  .program h2,
+  .info h2,
+  .rsvp h2,
+  .galleri h2 {
+    font-size: 2.2rem;
+  }
+
+  .info-practical-block {
+    margin-bottom: 3rem;
+    padding: 0 0.5rem;
+  }
+
+  .info-bottom-row {
     grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .event-simple {
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .time {
+    min-width: auto;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .event-details {
+    text-align: left;
+  }
+
+  .rsvp-form {
+    margin: 0 1rem;
+    padding: 2.5rem;
+  }
+
+  .countdown-container {
+    padding: 2rem;
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar.scrolled {
+    padding: 0.8rem 0;
   }
 }
 
-@media (min-width: 769px) {
-  .timeline {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .timeline-day.main-day {
-    grid-column: 2;
-  }
-}
+/* Removed unused timeline styles */
 
 /* Fade-in animasjon */
 .fade-in {
@@ -733,4 +1651,27 @@ body {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .heart {
+    animation: none;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
 }
